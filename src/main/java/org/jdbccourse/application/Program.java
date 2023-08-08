@@ -23,30 +23,36 @@ public class Program {
 //        System.out.println(seller);
 
 
-        System.out.println("------ TEST 01: seller findById");
-        // teste Find By Id
+//        System.out.println("------ TEST 01: seller findById");
+//        // teste Find By Id
         SellerDAO sellerDAO = DaoFactory.createsellerDao();
-
-        Seller vendedor = sellerDAO.findById(4);
-
-        System.out.println(vendedor);
-
-
-        System.out.println("\n------- TEST 02: seller findByDepartmentId");
+//
+//        Seller vendedor = sellerDAO.findById(4);
+//
+//        System.out.println(vendedor);
+//
+//
+//        System.out.println("\n------- TEST 02: seller findByDepartmentId");
         Department depto = new Department(2, null);
-        List<Seller> list = sellerDAO.finByDepartment(depto);
-        for(Seller seller : list){
-            System.out.println(seller);
-        }
+//        List<Seller> list = sellerDAO.finByDepartment(depto);
+//        for(Seller seller : list){
+//            System.out.println(seller);
+//        }
+//
+//
+//        System.out.println("\n------- TEST 03: seller findByAll");
+//       list = sellerDAO.findAll();
+//        for(Seller seller : list){
+//            System.out.println(seller);
+//        }
 
-
-        System.out.println("\n------- TEST 03: seller findByAll");
-       list = sellerDAO.findAll();
-        for(Seller seller : list){
-            System.out.println(seller);
+        System.out.println("\n------- TEST 04: seller insert");
+        Seller newSeller = new Seller(null, "Ludwig", "lud@gmail.com", new Date(), 8000.0, depto);
+        sellerDAO.insert(newSeller);
+        System.out.println("Inserted! new id = "+ newSeller.getId());
         }
 
 
 
     }
-}
+

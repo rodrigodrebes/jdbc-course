@@ -10,6 +10,7 @@ import org.jdbccourse.model.entities.Seller;
 import java.sql.Connection;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
@@ -52,12 +53,20 @@ public class Program {
 //        System.out.println("Inserted! new id = "+ newSeller.getId());
 //        }
 
-         System.out.println("\n------- TEST 05: seller update");
-            vendedor = sellerDAO.findById(1);
-            vendedor.setName("Rodrigo");
-            vendedor.setEmail("rodrigo@gmail.com");
-            sellerDAO.update(vendedor);
-        System.out.println("Update completed! ");
+//         System.out.println("\n------- TEST 05: seller update");
+//            vendedor = sellerDAO.findById(1);
+//            vendedor.setName("Rodrigo");
+//            vendedor.setEmail("rodrigo@gmail.com");
+//            sellerDAO.update(vendedor);
+//        System.out.println("Update completed! ");
+
+        System.out.println("\n------- TEST 06: seller delete");
+        System.out.println("Enter id for delete test: ");
+        Scanner sc = new Scanner(System.in);
+        int id = sc.nextInt();
+        sellerDAO.deleteById(id);
+        System.out.println("Delete completed!");
+
 
 
     }

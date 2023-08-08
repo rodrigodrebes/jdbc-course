@@ -9,6 +9,7 @@ import org.jdbccourse.model.entities.Seller;
 
 import java.sql.Connection;
 import java.util.Date;
+import java.util.List;
 
 public class Program {
     public static void main(String[] args) {
@@ -29,6 +30,15 @@ public class Program {
         Seller vendedor = sellerDAO.findById(4);
 
         System.out.println(vendedor);
+
+
+        System.out.println("------- TEST 02: seller findByDepartmentId");
+        Department depto = new Department(2, null);
+        List<Seller> list = sellerDAO.finByDepartment(depto);
+        for(Seller seller : list){
+            System.out.println(seller);
+        }
+
 
 
     }

@@ -13,15 +13,16 @@ import java.util.Date;
 public class Program {
     public static void main(String[] args) {
 
-        Connection conn = DB.getConnection();
-        DB.closeConnection();
+//        Connection conn = DB.getConnection();
+//        DB.closeConnection();
 
-        Department obj = new Department(1,"Books");
-        Seller seller = new Seller(21, "Bob", "bob@gmail.com", new Date(), 3000.0, obj);
-        System.out.println(obj);
-        System.out.println(seller);
+//        Department obj = new Department(1,"Books");
+//        Seller seller = new Seller(21, "Bob", "bob@gmail.com", new Date(), 3000.0, obj);
+//        System.out.println(obj);
+//        System.out.println(seller);
 
 
+        System.out.println("------ TEST 01: seller findById");
         // teste Find By Id
         SellerDAO sellerDAO = DaoFactory.createsellerDao();
 

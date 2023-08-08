@@ -32,9 +32,16 @@ public class Program {
         System.out.println(vendedor);
 
 
-        System.out.println("------- TEST 02: seller findByDepartmentId");
+        System.out.println("\n------- TEST 02: seller findByDepartmentId");
         Department depto = new Department(2, null);
         List<Seller> list = sellerDAO.finByDepartment(depto);
+        for(Seller seller : list){
+            System.out.println(seller);
+        }
+
+
+        System.out.println("\n------- TEST 03: seller findByAll");
+       list = sellerDAO.findAll();
         for(Seller seller : list){
             System.out.println(seller);
         }

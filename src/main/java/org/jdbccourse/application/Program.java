@@ -27,13 +27,13 @@ public class Program {
 //        // teste Find By Id
         SellerDAO sellerDAO = DaoFactory.createsellerDao();
 //
-//        Seller vendedor = sellerDAO.findById(4);
+        Seller vendedor = sellerDAO.findById(4);
 //
 //        System.out.println(vendedor);
 //
 //
 //        System.out.println("\n------- TEST 02: seller findByDepartmentId");
-        Department depto = new Department(2, null);
+//        Department depto = new Department(2, null);
 //        List<Seller> list = sellerDAO.finByDepartment(depto);
 //        for(Seller seller : list){
 //            System.out.println(seller);
@@ -46,13 +46,20 @@ public class Program {
 //            System.out.println(seller);
 //        }
 
-        System.out.println("\n------- TEST 04: seller insert");
-        Seller newSeller = new Seller(null, "Ludwig", "lud@gmail.com", new Date(), 8000.0, depto);
-        sellerDAO.insert(newSeller);
-        System.out.println("Inserted! new id = "+ newSeller.getId());
-        }
+//        System.out.println("\n------- TEST 04: seller insert");
+//        Seller newSeller = new Seller(null, "Ludwig", "lud@gmail.com", new Date(), 8000.0, depto);
+//        sellerDAO.insert(newSeller);
+//        System.out.println("Inserted! new id = "+ newSeller.getId());
+//        }
 
+         System.out.println("\n------- TEST 05: seller update");
+            vendedor = sellerDAO.findById(1);
+            vendedor.setName("Rodrigo");
+            vendedor.setEmail("rodrigo@gmail.com");
+            sellerDAO.update(vendedor);
+        System.out.println("Update completed! ");
 
 
     }
+}
 
